@@ -84,7 +84,7 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         if ($request->file('img')) {
-            $img = $article->file('img')->store('public/img');
+            $img = $request->file('img')->store('img', 'public');
         } else {
             $img = $article->img;
         }
